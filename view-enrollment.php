@@ -2,14 +2,16 @@
 //database connection
 require_once('logics/dbconnection.php');
 $sqlFetchStudent = mysqli_query($conn,
-   "SELECT * FROM enrollment WHERE no='".$_GET['id']."' ");
+   "SELECT * FROM contactus WHERE no='".$_GET['id']."' ");
+
 while($FetchStudentRecords = mysqli_fetch_array($sqlFetchStudent))
 {
-    $fullname = $FetchStudentRecords['fullname'];
+    $no = $FetchStudentRecords['no'];
+    $firstname = $FetchStudentRecords['firstname'];
+    $lastname = $FetchStudentRecords['lastname'];
     $phonenumber = $FetchStudentRecords['phonenumber'];
     $email = $FetchStudentRecords['email'];
-    $gender = $FetchStudentRecords['gender'];
-    $course = $FetchStudentRecords['course'];
+    $message = $FetchStudentRecords['message'];
     $created_at = $FetchStudentRecords['created_at'];
 }   
 
@@ -36,9 +38,10 @@ while($FetchStudentRecords = mysqli_fetch_array($sqlFetchStudent))
                         </div>
                         <div class="card-body">
                             <ul class="list-group">
-                                <li class="list-group-item">Full Name: <span class="float-right bg-primary"><?php echo $fullname ?></span></li>
-                                <li class="list-group-item">Email: <span class="float-right bg-secondary"><?php echo $phonenumber ?></span></li>
-                                <li class="list-group-item">Phone Number: <span class="float-right bg-danger"><?php echo $email ?></span></li>
+                                
+                            <li class="list-group-item">no: <span class="float-right bg-primary"><?php echo $no ?></span></li>
+                            <li class="list-group-item">firstname: <span class="float-right bg-secondary"><?php echo $firstname ?></span></li>
+                            <li class="list-group-item">lastname: <span class="float-right bg-danger"><?php echo $lastname ?></span></li>
                             </ul>
                         </div>
                     </div>
@@ -52,8 +55,9 @@ while($FetchStudentRecords = mysqli_fetch_array($sqlFetchStudent))
                         </div>
                         <div class="card-body">
                             <ul class="list-group">
-                                <li class="list-group-item">Gender: <span class="float-right bg-primary"><?php echo $gender ?></span></li>
-                                <li class="list-group-item">course: <span class="float-right bg-secondary"><?php echo $course ?></span></li>
+                            <li class="list-group-item">phonenumber: <span class="float-right bg-primary"><?php echo $phonenumber ?></span></li>   
+                                <li class="list-group-item">email: <span class="float-right bg-secondary"><?php echo $email ?></span></li>
+                                <li class="list-group-item">message: <span class="float-right bg-danger"><?php echo $message ?></span></li>
                                 <li class="list-group-item">created_at: <span class="float-right bg-danger"><?php echo $created_at ?></span></li>
                             </ul>
                         </div>
