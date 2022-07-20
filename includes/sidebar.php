@@ -25,8 +25,14 @@
 					</a>
 					<li>
 						<a href="contactus.php">
-							<span> <i class="fa fa-envelop"> </i> </span>
+							<span><i class="fa fa-envelope"></i></span>
 							<span>Messages</span>
+                        </a>	
+					</li>
+					<li>
+						<a href="subscribe.php">
+							<span><i class="fa fa-comments"></i></span>
+							<span>subscribe</span>
                         </a>	
 					</li>
 				</ul>
